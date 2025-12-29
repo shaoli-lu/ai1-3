@@ -398,6 +398,37 @@ a:hover {
 .pdf-nav:hover { transform: translateY(-2px); }
 
 .carousel-view { flex: 1; display: flex; flex-direction: column; align-items: center; }
+
+/* YouTube Video Embed Styles */
+.video-section { margin-top: 28px; }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+}
+
+.video-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Mobile adjustments for video */
+@media (max-width: 600px) {
+    .video-container {
+        padding-bottom: 56.25%; /* Maintain 16:9 on mobile */
+    }
+}
 .carousel-title {
     font-weight: 800;
     margin-bottom: 12px;
@@ -493,4 +524,16 @@ a:hover {
     border-radius: 12px;
     font-size: 0.95rem;
     border-left: 3px solid var(--accent-color);
+}
+
+.video-fallback {
+    text-align: center;
+    padding: 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.video-fallback a {
+    color: var(--accent-color);
+    font-weight: 600;
 }
